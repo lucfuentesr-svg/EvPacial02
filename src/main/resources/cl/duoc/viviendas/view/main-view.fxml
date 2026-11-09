@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="1100.0" prefHeight="720.0"
+            style="-fx-background-color: #f4f6fa; -fx-font-family: 'System';">
+    <top>
+        <VBox spacing="5.0" style="-fx-background-color: #172554;">
+            <padding>
+                <Insets top="22.0" right="28.0" bottom="22.0" left="28.0" />
+            </padding>
+            <Label text="Administradora de Viviendas"
+                   style="-fx-text-fill: white; -fx-font-size: 25px; -fx-font-weight: bold;" />
+            <Label text="Gestiona casas, departamentos y sus datos de arriendo"
+                   style="-fx-text-fill: #cbd5e1; -fx-font-size: 13px;" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="18.0">
+            <padding>
+                <Insets top="22.0" right="28.0" bottom="24.0" left="28.0" />
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                    <Label text="Viviendas registradas"
+                           style="-fx-font-size: 19px; -fx-font-weight: bold; -fx-text-fill: #172033;" />
+                    <Label text="Consulta y administra las propiedades disponibles"
+                           style="-fx-font-size: 12px; -fx-text-fill: #64748b;" />
+                </VBox>
+                <Button text="Actualizar lista"
+                        style="-fx-background-color: #e2e8f0; -fx-text-fill: #172033; -fx-font-weight: bold; -fx-background-radius: 6px; -fx-padding: 9px 14px;" />
+            </HBox>
+
+            <TableView VBox.vgrow="ALWAYS"
+                       style="-fx-background-color: white; -fx-border-color: #dbe2ea; -fx-border-radius: 6px; -fx-background-radius: 6px;">
+                <columns>
+                    <TableColumn text="Código" prefWidth="130.0" />
+                    <TableColumn text="Tipo" prefWidth="150.0" />
+                    <TableColumn text="Superficie (m²)" prefWidth="150.0" />
+                    <TableColumn text="Habitaciones" prefWidth="130.0" />
+                    <TableColumn text="Detalle" prefWidth="230.0" />
+                    <TableColumn text="Arriendo mensual" prefWidth="180.0" />
+                </columns>
+                <placeholder>
+                    <Label text="No hay viviendas para mostrar." style="-fx-text-fill: #64748b;" />
+                </placeholder>
+            </TableView>
+
+            <VBox spacing="13.0"
+                  style="-fx-background-color: white; -fx-border-color: #dbe2ea; -fx-border-radius: 6px; -fx-background-radius: 6px;">
+                <padding>
+                    <Insets top="17.0" right="18.0" bottom="17.0" left="18.0" />
+                </padding>
+                <Label text="Registrar vivienda"
+                       style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #172033;" />
+                <Separator />
+                <GridPane hgap="12.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="20.0" />
+                        <ColumnConstraints percentWidth="20.0" />
+                        <ColumnConstraints percentWidth="20.0" />
+                        <ColumnConstraints percentWidth="20.0" />
+                        <ColumnConstraints percentWidth="20.0" />
+                    </columnConstraints>
+                    <TextField promptText="Código" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField promptText="Tipo (Casa/Departamento)" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <TextField promptText="Superficie (m²)" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <TextField promptText="Habitaciones" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                    <TextField promptText="Detalle (patio/piso)" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                </GridPane>
+                <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                    <Button text="Eliminar seleccionada"
+                            style="-fx-background-color: #fee2e2; -fx-text-fill: #991b1b; -fx-font-weight: bold; -fx-background-radius: 6px; -fx-padding: 9px 14px;" />
+                    <Button text="Registrar"
+                            style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6px; -fx-padding: 9px 18px;" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
